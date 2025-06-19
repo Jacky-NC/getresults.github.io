@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error 404 (Not Found)!!1</title>
+    <style>
+        body {
+            background: #fff;
+            color: #222;
+            font-family: Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 100px auto 0 auto;
+            max-width: 700px;
+            min-height: 60vh;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+        .container > div {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .container img:last-child {
+            flex: 1;
+            margin-left: 40px;
+            width: 120px;
+            max-width: 100%;
+        }
+        .container img:first-child {
+            width: 120px;
+            margin-bottom: 40px;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 0 0 20px 0;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 700px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 20px;
+            }
+            .container img:last-child {
+                margin-left: 0;
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google">
+            <p style="color:grey"><b style="color:black">404. </b>That’s an error.</p>
+            <p>The requested URL was not found on this server. <span style="color: grey">That’s all we know.</span></p>
+            <a href="https://google.com">Return to Google</a>
+            <span>Google &copy; 2025</span>
+        </div>
+        <img src="https://www.google.com/images/errors/robot.png" alt="Robot">
+    </div>
+    <script>
+        // Optional: JS for extra effect
+        console.log('Google-style 404 page loaded');
+    </script>
+</body>
+</html>

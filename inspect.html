@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Notification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: #f5f5f5;
+            font-family: Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: #fff;
+            max-width: 480px;
+            margin: 40px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(60,64,67,.15);
+            overflow: hidden;
+        }
+        .header {
+            background: #ffffff;
+            color: #000;
+            padding: 24px 32px;
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: .5px;
+            text-align: center
+        }
+        .content {
+            padding: 32px;
+            color: #202124;
+            font-size: 16px;
+            text-align: center
+        }
+        .cta-btn {
+            display: inline-block;
+            margin: 24px 0 0 0;
+            padding: 12px 28px;
+            background: #4285f4;
+            color: #fff !important;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: .5px;
+        }
+        .footer {
+            padding: 16px 32px;
+            font-size: 11px;
+            color: #5f6368;
+            background: #f5f5f5;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/640px-Google_2015_logo.svg.png" alt="Google Logo" style="height: 24px; vertical-align: middle;"><br>
+            <br>
+            There is new login activity on your account.
+
+            <!-- show a icon-like image with email address -->
+            <!--
+            <br><br>
+            <span style="
+                display:inline-block;
+                width: 24px;
+                height: 24px;
+                border-radius:50%;
+                background:#4285f4;
+                color:#fff;
+                font-weight:700;
+                font-size:12px;
+                line-height:24px;
+                text-align:center;
+                margin-bottom:8px;
+            ">AT</span>
+            <small style="font-size:14px; color:#343434">at@gmail.com</small>
+            -->
+        </div>
+        <hr style="border:0; border-top:1.5px solid #e0e0e0; margin: 0 32px;">
+        <div class="content">
+            We've detected new sign-ins to your Google Account. If it's you, no action is required. Otherwise, we'll help you keep your account secure.
+            <br><br>
+            <a class="cta-btn" href="sign_in.html">Inspect activities</a>
+            <br><br>
+            <small>you can also visit the following website to view security activities:</small><br>
+            <small>https://myaccount.google.com/notifications</small>
+        </div>
+        <div class="footer">
+            This email is to notify you about important changes to your Google Account and services.<br>
+            &copy; 2025 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
+        </div>
+    </div>
+</body>
+</html>

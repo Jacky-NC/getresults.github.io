@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #f2f6fc;
+            font-family: 'Google Sans', Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: 0 2px 10px rgba(60,64,67,.15);
+            width: 96vw;
+            max-width: 600px;
+            min-width: 0;
+            margin: 100px auto 0 auto;
+            padding: 48px 40px 36px 40px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 16px 0;
+            gap: 12px;
+        }
+        .label {
+            font-weight: bold;
+            color: #3c4043;
+            min-width: 80px;
+            text-align: left; /* Align label text to the left */
+        }
+        .value {
+            font-size: 18px;
+            color: #202124;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>You got phished ! </h2>
+        <div class="row">
+            <div class="label">Email:</div>
+            <div class="value" id="email"></div>
+        </div>
+        <div class="row">
+            <div class="label">Password:</div>
+            <div class="value" id="password"></div>
+        </div>
+    </div>
+    <script>
+        // Parse query string for email and password
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById('email').textContent = params.get('email') || '';
+        document.getElementById('password').textContent = params.get('password') || '';
+    </script>
+</body>
+</html>
